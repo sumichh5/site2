@@ -4,12 +4,14 @@ import os
 
 app = Flask(__name__)
 
-# 🔥 запуск бота при старте
+# запуск бота
 subprocess.Popen(["python", "bot.py"])
 
 @app.route('/')
 def index():
-    return redirect("https://discord.gg/2cU2wynKK")  # сюда можешь вставить свой сервер
+    return redirect("https://discord.gg/2cU2wynKK")
 
-port = int(os.environ.get("PORT", 5000))
+# 🔥 ВАЖНО
+port = int(os.environ.get("PORT", 8080))
+
 app.run(host="0.0.0.0", port=port)
