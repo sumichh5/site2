@@ -1,7 +1,11 @@
 from flask import Flask, redirect
+import subprocess
 import os
 
 app = Flask(__name__)
+
+# 🔥 запуск бота
+subprocess.Popen(["python3", "bot.py"])
 
 @app.route('/')
 def index():
